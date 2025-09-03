@@ -21,7 +21,7 @@ const Skills = () => {
   return (
   
     <section
-    id="Skills"
+    id="skills"
     className="py-16 px-6 md:px-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <h2 className=" text-purple-400 text-3xl font-bold text-center mb-12 relative block mx-auto after:content-[''] after:block after:w-20 after:h-1 after:bg-blue-500 after:mx-auto after:mt-2">
         My Skills

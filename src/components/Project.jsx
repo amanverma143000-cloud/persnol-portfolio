@@ -21,8 +21,8 @@ const Projects = () => {
     },
     {
       title: "Portfolio",
-      link: "https://yourproject3.com",
-      github: "https://github.com/username/project3",
+      link: "persnol-portfolio-five.vercel.app",
+      github: "https://github.com/amanverma143000-cloud/persnol-portfolio",
       desc: "Personal portfolio using React & Tailwind",
       image: portfolio
     },
