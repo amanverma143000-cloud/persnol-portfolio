@@ -10,6 +10,7 @@ import WorkExperience from './components/Exprience';
 import AITools from './components/Aitools';
 import CodeEditors from './components/codeeditior';
 import Education from './components/Education';
+import DSA from './components/Dsa';
 // import Stats from './components/Stats';
 
 
@@ -25,6 +26,7 @@ return (
 <Skills/>
 <AITools/>
 <CodeEditors/>
+<DSA/>
 <Projects />
 <Contact />
 <Footer />
