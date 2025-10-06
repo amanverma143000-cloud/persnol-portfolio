@@ -1,26 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import { motion } from "framer-motion"; // eslint-disable-line
+import { FiMail, FiPhone } from "react-icons/fi";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+const ContactCard = () => {
+  const gmailHref =
+    "https://mail.google.com/mail/?view=cm&fs=1&to=amanverma33445@gmail.com";
+  const mailtoHref = "mailto:amanverma33445@gmail.com";
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      const data = await response.json();
-      if (data.success) {
-        alert("Your message has been sent successfully!");
-      } else {
-        alert("Failed to send message: " + data.error);
-      }
-    } catch (err) {
-      alert("Error: " + err.message);
+  const handleEmailClick = () => {
+    const opened = window.open(gmailHref, "_blank", "noopener,noreferrer");
+    if (!opened) {
+      window.location.href = mailtoHref;
     }
   };
 
@@ -37,51 +28,78 @@ const Contact = () => {
 
       {/* Section Heading */}
       <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-10 text-center animate-fade-in-up">
-        Contact
+        Ready to Start a Project?
       </h2>
       <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12 animate-fade-in-up delay-100">
-        Have an idea or a project in mind? Let's collaborate and bring it to life.
+        Whether you have a project in mind or just want to chat about technology,
+        I'd love to hear from you. Let's create something amazing together!
       </p>
 
-      {/* Contact Form */}
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-2xl mx-auto bg-[#18182a] p-10 rounded-2xl shadow-xl space-y-6 animate-fade-in-up delay-200"
-      >
-        <div className="space-y-4">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-4 rounded-lg bg-[#0f0f1a] border border-gray-700 text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full p-4 rounded-lg bg-[#0f0f1a] border border-gray-700 text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            required
-          />
-          <textarea
-            placeholder="Your Message"
-            className="w-full p-4 rounded-lg bg-[#0f0f1a] border border-gray-700 text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
-            rows="6"
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-            required
-          ></textarea>
-        </div>
+      <div className="max-w-2xl mx-auto bg-[#18182a] p-10 rounded-2xl shadow-xl space-y-6 animate-fade-in-up delay-200">
+        {/* Send Email Button */}
         <button
-          className="text-center w-full px-5 py-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300 shadow-md"
+          onClick={handleEmailClick}
+          className="w-full py-3 rounded-full bg-gradient-to-r from-purple-500 to-purple-400 text-white font-semibold shadow-md flex items-center justify-center gap-3 hover:scale-105 transition-transform duration-300"
         >
-          Send message
+          <FiMail />
+          <span>Send an Email</span>
         </button>
-      </form>
+
+        {/* LinkedIn Button */}
+        <a
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full inline-block py-3 rounded-full border border-purple-600 text-purple-300 font-semibold text-center hover:scale-105 transition-transform duration-300"
+        >
+          <span className="inline-flex items-center gap-2 justify-center">
+            <FaLinkedin /> Connect on LinkedIn
+          </span>
+        </a>
+      </div>
+
+      {/* Footer Contact Bar */}
+      <div className="mt-20 bg-[#18182a] py-6 px-6 md:px-20 rounded-t-2xl shadow-inner hover:bg-[#1f1f2f] transition-colors duration-300">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10 text-gray-300 text-sm md:text-base">
+          <div className="flex items-center gap-3">
+            <FiPhone className="text-purple-400 text-lg" />
+            <span>+91 7441121492</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <FiMail className="text-purple-400 text-lg" />
+            <a href="mailto:amanverma33445@gmail.com" className="hover:text-purple-400">
+              amanverma33445@gmail.com
+            </a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <FaLinkedin className="text-purple-400 text-lg" />
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-purple-400"
+            >
+              linkedin.com/in/amanverma999
+            </a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <FaGithub className="text-purple-400 text-lg" />
+            <a
+              href="https://github.com/amanverma143000-cloud"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-purple-400"
+            >
+              github.com/amanverma143000-cloud
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
 
-export default Contact;
+export default ContactCard;

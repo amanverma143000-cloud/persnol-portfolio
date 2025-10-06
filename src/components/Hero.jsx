@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Left Content */}
       <div className="flex-1 space-y-6 z-10 animate-fade-in-up">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight">
-          Hi, I'm <span className="text-purple-500">Aman</span>
+          Hi👋, I'm <span className="text-purple-500">Aman</span>
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl max-w-md text-gray-300 leading-relaxed">
           I develop <span className="text-purple-400 font-semibold">Full Stack Web Applications</span>, using <br />

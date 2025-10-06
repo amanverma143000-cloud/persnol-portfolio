@@ -11,11 +11,21 @@ const Navbar = () => {
       </h1>
 
       {/* Desktop Navigation */}
-      <ul className="hidden md:flex gap-8 text-gray-300 font-medium">
+      <ul className="hidden md:flex gap-8 text-gray-300 font-medium items-center">
         <li><a href="#about" className="hover:text-purple-400 transition">About</a></li>
         <li><a href="#projects" className="hover:text-purple-400 transition">Projects</a></li>
         <li><a href="#skills" className="hover:text-purple-400 transition">Skills</a></li>
         <li><a href="#contact" className="hover:text-purple-400 transition">Contact</a></li>
+        {/* Resume Download Button */}
+        <li>
+          <a
+           href="/Aman_verma_MERN_Resume_1.pdf"
+            download
+            className="px-4 py-2 border border-purple-500 rounded-lg text-purple-400 hover:bg-purple-500 hover:text-white transition"
+          >
+            Download Resume
+          </a>
+        </li>
       </ul>
 
       {/* Mobile Menu Button */}
@@ -33,6 +43,14 @@ const Navbar = () => {
           <a href="#projects" className="hover:text-purple-400">Projects</a>
           <a href="#skills" className="hover:text-purple-400">Skills</a>
           <a href="#contact" className="hover:text-purple-400">Contact</a>
+          {/* Resume Download in mobile menu */}
+          <a
+            href="/resume.pdf"
+            download
+            className="px-4 py-2 border border-purple-500 rounded-lg text-purple-400 hover:bg-purple-500 hover:text-white transition"
+          >
+            Download Resume
+          </a>
         </div>
       )}
     </nav>
